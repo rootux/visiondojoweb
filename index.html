@@ -1,50 +1,57 @@
 <html>
   <head>
-    <title>Youtube Mixer Wild Edition</title>
+    <title>Vision Dojo</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="html5slider.js"></script>
     <script type="text/javascript" src="swfobject/swfobject.js"></script>   
     <script type="text/javascript" src="mixer.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<meta property="og:image" content="http://www.thevisiondojo.com/style/gome.jpg" />
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-76248210-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
   </head>
  
  <body onload="iniciar_players();">
+ 	<h2>Vision Dojo</h2>
 
-    <center class="top"><!-- <h1>Youtube Mixer Wild Edition</h1></center> -->
-	<div class="logo"> <img src="style/youtube-mixer-wild-edition.png" alt="YouTube Mixer Wild Edition"> </div>
-    <a href="https://github.com/joac/youtube_mixer">
-      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    
+    <center class="top">
+	<div class="logo"> </div>
 
-
-<div id="players" style="width: 100%; margin: auto;">
-      <div id='inner' style="width: 860px; margin: auto;">
+<div id="players" style="width: 100%; margin: 0;">
+      <div id='inner' style="width: 100%; margin: 0;">
       <div id="ytapiplayer1">
-        You need Flash player 8+ and JavaScript enabled to view this video.
+        For an interactive experience please visit on a desktop computer...
       </div>
       <div id="ytapiplayer2">
-        You need Flash player 8+ and JavaScript enabled to view this video.
       </div>
     </div>
     </div>
     <br/>
-   <input id="slider" type="range" onchange="slider_change()"/>
+    <div class='sliderArea'>
+    	<p>G</p>
+   		<input id="slider" type="range" oninput="slider_change()"/>
+   		<p>L</p>
+   </div>
+   <p><a href='#' id='muteAll'>Now feel free to play your own music</a></p>
     <br/>
-	<div class="buscador">    
-	<input id='search' type='text'/>
-    <input id='search' type='button' value='buscar' onclick="buscar();"/>
-	</div>
 	 <div class="content">    
-<ul id='listita'>
-    </ul>
    </div>   
+   <div class='gome'>
+   	<img src='style/gome.jpg' alt='Wearing Tutu on MDMA does not make your radical'>
+   </div>
 	<div id="footer">
 		<div class="content-footer">
-			<img src="style/youtube-mixer-wild-edition_footer.png" alt="YouTube Mixer Wild Edition">
-			<p><a href="https://github.com/joac/youtube_mixer">Fork me on GitHub</a></p>
+			<p><a href='https://www.facebook.com/visiondojo'> Follow the rabit hole</a></p>
+			<!-- <p><a href="https://github.com/joac/youtube_mixer">Based on the work of joac</a></p> -->
 		</div>
-	</div> <!-- /footer --->   
+	</div>
   </body>
 </html>

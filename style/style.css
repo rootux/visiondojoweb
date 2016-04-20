@@ -1,19 +1,30 @@
 body {
-	background: #EBEBEB;
-	padding: 0px 30px 30px 30px;
+	background: #2A2B2A;
+	padding: 0px 10px 10px 10px;
 	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-	color: #333;
-	font-size: 13px;
+	font-size: 20px;
+	color: white;
+}
+
+body h2 {
+	text-align: center;
 }
 
 a {
+	color: white;
 	font-weight: bold;
 	text-decoration: none;
-	color: #333;
 }
 
-a:hover {
-	text-decoration: underline;
+
+a:visited, a:focus {
+	color: #fffff;
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	text-decoration: none;
+	color: #fffff;
 }
 
 .logo {
@@ -24,9 +35,8 @@ a:hover {
 
 
 
-center.top {
-	background: url('los-salvajes.png') no-repeat scroll transparent;
-	
+.gome img{
+	width: 100%;
 }
 
 
@@ -35,7 +45,6 @@ center.top {
 =======================*/
 
 #footer {
-	border-top: 1px solid #ccc;
 	padding-top: 10px;
 	text-align: left;
 	height: 73px;
@@ -45,6 +54,11 @@ center.top {
 .content-footer {
 	width: 960px;
 	margin: 0px auto;
+	font-size: 0.6em;
+}
+
+.content-footer p {
+	text-align:right;
 }
 
 #footer img {
@@ -62,6 +76,10 @@ center.top {
 	padding-bottom: 10px;
 	border-bottom: #d0cece;
 	height: 360px;
+}
+
+.sliderArea p {
+	display: inline-block;
 }
 
 /*=======================
@@ -118,14 +136,12 @@ input#search[type='button']:hover {
 	margin: 20px auto 0px auto;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #ccc;
-	background: url('bg-buscador.png') repeat-x scroll transparent;
+	//background: url('bg-buscador.png') repeat-x scroll transparent;
 }
 
 .content {
 	width: 960px;
 	margin: 0px auto;
-	border-top: 1px solid #fff;
-
 }
 
 /*=========================
@@ -161,7 +177,7 @@ ul#listita li:hover {
 
 #listita, #listita a {
 	font-size: 16px;
-	color: #313131;
+	color: #fffff;
 	text-decoration: none;
 	
 }

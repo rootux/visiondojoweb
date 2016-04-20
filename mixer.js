@@ -49,7 +49,7 @@ function cargar_video(video_id, player){
   var params = { allowScriptAccess: "always"};
   var atts = {id:"myytplayer" + player}
   swfobject.embedSWF("http://www.youtube.com/v/" + video_id + "?enablejsapi=1&playerapiid=ytplayer" + player +"&version=3",
-      "ytapiplayer" + player, "425", "356", "8", null, null, params, atts);
+      "ytapiplayer" + player, "550", "356", "8", null, null, params, atts);
 
 
 }
@@ -57,15 +57,26 @@ function cargar_video(video_id, player){
 function onYouTubePlayerReady(playerId){
   if (playerId == "ytplayer1"){
     ytplayer1 = document.getElementById("myytplayer1");
+    ytplayer1.playVideo();
+    setTimeout(function(){ $('#slider').val(0); slider_change();}, 500);
   } else if(playerId == 'ytplayer2'){
     ytplayer2 =document.getElementById('myytplayer2');
+    ytplayer2.playVideo();
+    setTimeout(function(){ $('#slider').val(0); slider_change(); }, 500);
   }
 }
 
+$(function() {
+  $('#muteAll').click(function() {
+    ytplayer1.setVolume(0);
+    ytplayer2.setVolume(0);
+  });
+});
+
 function iniciar_players()
 {
-  cargar_video('G-8cHazsuog', 1);
-  cargar_video('3lGXgiWYexk', 2);
+  cargar_video('6srcq4aWoAA', 1);
+  cargar_video('RGal4gO4TDo', 2);
 }
 function buscar(){
   var text = $('#search').val();
@@ -77,6 +88,6 @@ function slider_change()
 {
   var value = $('#slider').val();
   ytplayer1.setVolume(100 - value);
-  ytplayer2.setVolume(value);
+  ytplayer2.setVolume(value - 60);
 }
 
