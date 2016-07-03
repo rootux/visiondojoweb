@@ -3,10 +3,9 @@
     <title>Vision Dojo</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="html5slider.js"></script>
-    <script type="text/javascript" src="swfobject/swfobject.js"></script>   
     <script type="text/javascript" src="mixer.js"></script>
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	 <link rel="stylesheet" type="text/css" href="style/style.css">
+	 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<meta property="og:image" content="http://www.thevisiondojo.com/style/gome.jpg" />
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -17,9 +16,95 @@
   ga('send', 'pageview');
 </script>
 
-  </head>
- 
- <body onload="iniciar_players();">
+</head> 
+<body>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      var player2;
+      var player3;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '500',
+          videoId: '6srcq4aWoAA',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+
+        player2 = new YT.Player('player2', {
+          height: '390',
+          width: '500',
+          videoId: 'RGal4gO4TDo',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange2
+          }
+        });
+
+        player3 = new YT.Player('player3', {
+          height: '390',
+          width: '500',
+          videoId: 'uGcuD5C-EZE',
+          events: {
+            'onReady': onPlayerReady,
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+        setTimeout(function(){ $('#slider').val(0); slider_change();}, 500);
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //   setTimeout(stopVideo, 6000);
+        //   done = true;
+        // }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange2(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //   setTimeout(stopVideo2, 2000);
+        //   done = true;
+        // }
+      }
+      function stopVideo2() {
+        player2.stopVideo();
+      }
+    </script>
+
+
  	<h2>Vision Dojo</h2>
 
     <center class="top">
@@ -27,30 +112,81 @@
 
 <div id="players" style="width: 100%; margin: 0;">
       <div id='inner' style="width: 100%; margin: 0;">
-      <div id="ytapiplayer1">
-        For an interactive experience please visit on a desktop computer...
+      <div class="ytplayer">
+        <div id="player"></div>
       </div>
-      <div id="ytapiplayer2">
+      <div class="ytplayer">
+        <div id="player2"></div>
+      </div>
+      <div class='sliderArea'>
+        <p>G</p>
+        <input id="slider" type="range" oninput="slider_change()"/>
+        <p>L</p>
+      </div>
+      <div class="ytplayer">
+        <div id="player3"></div>
       </div>
     </div>
     </div>
     <br/>
-    <div class='sliderArea'>
-    	<p>G</p>
-   		<input id="slider" type="range" oninput="slider_change()"/>
-   		<p>L</p>
+	 <div class="content">
+    <h3>What</h3>
+    <p class='alignLeft'>The Vision Dojo is an interactive art installation started as a project for the Israeli Burning Man event. A.K.A Midburn.
+    </p>
+    <p class='alignLeft'>It allow the player to watch a colorful <b>Realtime</b> changing projection of his movements.<br>
+    In front of every camera there can be up to 6 people in parallel.
+    The installation is made out of projectors, special depth and high frame­ rate cameras.
+    It requires ­a place to project on ­White wall / Lycra, Electricity. It operates at night time.</p>
+    <h3>What's next</h3>
+    <p class='alignLeft'>
+    We got granted 10,000 Nis from the Israeli Burning Man art fund
+    </p>
+    <p class='alignLeft'>
+    We had a successful Crowed Funding campaign where we raised 26,000 Nis.
+    </p>
+    <br>
+    <h3>
+    Our goal is to inspire people mindfulness and creativity. We would love to co-operate with you.
+    </h3>
+    <br>
+    <p class='alignLeft'>
+    Please contact us at visiondojo@gmail.com for more info
+    </p>
+    <p class='alignLeft'>
+    Our next destination are:
+    <ul>
+      <li>Denmark - Borderland (Aug 2016)</li>
+      <li>Netherlands - Where the sheep sleeps (Aug 2016)</li>
+      <li>US - Navada - Burning man (Sep 2016)</li>
+    </ul>
+    <h3>
+    Open source
+    </h3>
+    <p class='alignLeft'>
+    Yes! we belive in open source and you can see the source code and contribute on our <a href="https://github.com/rootux/visionquest">Github</a>
+    </p>
+    </p>
+   <div class="alignleft">
+     <h3 class='alignleft contact'>Contact Us</h3>
+      <a href='https://www.facebook.com/visiondojo'>Facebook page</a><br>
+      <a href='https://www.youtube.com/channel/UC-Nq--JUlaVVTsBCXkxONbg'>Youtube page</a><br>
+      <a href="">By email Visiondojo@gmail.com</a>
+    <br>
    </div>
-   <p><a href='#' id='muteAll'>Now feel free to play your own music</a></p>
-    <br/>
-	 <div class="content">    
-   </div>   
-   <div class='gome'>
-   	<img src='style/gome.jpg' alt='Wearing Tutu on MDMA does not make your radical'>
+    <br>
+    <br>
+    <img src="style/player.png"><br><br>
+    <img src="style/player2.png"><br><br>
+    <img src="style/player3.png"><br><br>
    </div>
 	<div id="footer">
 		<div class="content-footer">
-			<p><a href='https://www.facebook.com/visiondojo'> Follow the rabit hole</a></p>
-			<!-- <p><a href="https://github.com/joac/youtube_mixer">Based on the work of joac</a></p> -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="VK6R7URCLJ2WU">
+      <input type="image" src="style/donate.png" class='donateButton' border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
 		</div>
 	</div>
   </body>

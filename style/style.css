@@ -1,13 +1,24 @@
 body {
-	background: #2A2B2A;
+	background: black;
 	padding: 0px 10px 10px 10px;
-	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	font-family: 'Open Sans', serif;
 	font-size: 20px;
 	color: white;
 }
 
 body h2 {
 	text-align: center;
+	color: #7E7F9A;
+}
+
+ul {
+	text-align: left;
+}
+
+
+form {
+	float:right;
+	margin-bottom: 1em;
 }
 
 a {
@@ -16,15 +27,44 @@ a {
 	text-decoration: none;
 }
 
+.contact {
+	float:left
+	margin-top:0;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.donateButton {
+	margin-left: 3em;
+	width: 100px;
+}
+
+.ytplayer {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
+	color: #7E7F9A;
+}
 
 a:visited, a:focus {
-	color: #fffff;
 	text-decoration: none;
+	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
+	color: #7E7F9A;
 }
 
 a:active, a:hover {
 	text-decoration: none;
-	color: #fffff;
+	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
+	color: #7E7F9A;
 }
 
 .logo {
@@ -75,7 +115,7 @@ a:active, a:hover {
 #players {
 	padding-bottom: 10px;
 	border-bottom: #d0cece;
-	height: 360px;
+	height: auto;
 }
 
 .sliderArea p {
@@ -94,53 +134,23 @@ h1 {
 	font-size: 40px;
 }
 
-/* otros */
-
 .link {
 	margin-bottom: 15px;
 }
 
-/*=======================
-++++ BUSCADOR
-=======================*/
 
-input#search {
+input#slider {
+	width: 12em;
 	border: 1px solid #ccc;
 	padding: 8px;
 	font-size: 14px;
 	-webkit-border-radius: 03px;
 	-moz-border-radius: 03px;
 	border-radius: 03px;
-}
-
-input#search[type='button'] {
-	background: #23a4d4;
-	border: 1px solid #167be3;
-	color: #fff;
-	text-transform: uppercase;
-	-webkit-border-radius: 03px;
-	-moz-border-radius: 03px;
-	border-radius: 03px;
-	padding: 8px;
-	font-size: 12px;
-}
-
-input#search[type='button']:hover {
-	background: #167be3;
-	border: 1px solid #007eff;
-}
-
-
-.buscador {
-	width: 960px;
-	margin: 20px auto 0px auto;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #ccc;
-	//background: url('bg-buscador.png') repeat-x scroll transparent;
+	display: inline-block;
 }
 
 .content {
-	width: 960px;
 	margin: 0px auto;
 }
 

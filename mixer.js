@@ -1,57 +1,8 @@
-function buscar_en_youtube(texto){
-  var texto = escape(texto);
-  $('#listita').text('');  
-  $.ajax({
-    type: 'GET',
-    url: 'https://gdata.youtube.com/feeds/api/videos?q=' + texto + '&alt=json',
-    success: function (root){
-
-      var feed = root.feed;
-      var entries = feed.entry || [];
-
-      console.log(root.feed.entry);
-      for (var i = 0; i < entries.length; ++i){
-        var entry = entries[i];
-        var title = (entry.title.type == 'html') ? entry.title.$t : entry.title.$t;
-        var id = obtener_id(entry.id.$t);
-        var li_class = 'even';
-        if (i % 2) {
-            li_class = 'odd';
-        }
-        
-        $('#listita').append(
-          '<li class="' + li_class  +'">'
-          + '<div class="thumbnail">'
-          + '<img src="' + entry.media$group.media$thumbnail[1].url + '"/>'
-          + '</div>'
-		  + '<div class="link">'
-          + '<a href="'+ entry.link[0].href + '">' + title + '</a>'
-          + '</div>'
-          + '<div class="a_queue">'
-          + '<input type="button" value="cargar en A" onclick="ytplayer1.loadVideoById(\''+ id +'\');">'
-          + '</div>'
-          + '<div class="b_queue">'
-          + '<input type="button" value="cargar en B" onclick="ytplayer2.loadVideoById(\''+ id +'\');">'
-          + '</div>'
-          + '</li>'
-          );
-      }
-    },
-  });
-}
 
 function obtener_id(url_video){
   var elementos = url_video.split('/');
   var id = elementos[elementos.length - 1];
   return id;
-}
-function cargar_video(video_id, player){
-  var params = { allowScriptAccess: "always"};
-  var atts = {id:"myytplayer" + player}
-  swfobject.embedSWF("http://www.youtube.com/v/" + video_id + "?enablejsapi=1&playerapiid=ytplayer" + player +"&version=3",
-      "ytapiplayer" + player, "550", "356", "8", null, null, params, atts);
-
-
 }
 
 function onYouTubePlayerReady(playerId){
@@ -63,31 +14,24 @@ function onYouTubePlayerReady(playerId){
     ytplayer2 =document.getElementById('myytplayer2');
     ytplayer2.playVideo();
     setTimeout(function(){ $('#slider').val(0); slider_change(); }, 500);
+  } else if(playerId == 'ytplayer3'){
+    ytplayer3=document.getElementById('myytplayer3');
+    ytplayer3.playVideo();
   }
 }
 
 $(function() {
-  $('#muteAll').click(function() {
-    ytplayer1.setVolume(0);
-    ytplayer2.setVolume(0);
-  });
+  // $('#muteAll').click(function() {
+  //   player.setVolume(0);
+  //   player2.setVolume(0);
+  // });
 });
-
-function iniciar_players()
-{
-  cargar_video('6srcq4aWoAA', 1);
-  cargar_video('RGal4gO4TDo', 2);
-}
-function buscar(){
-  var text = $('#search').val();
-  buscar_en_youtube(text);
-  return false;
-}
 
 function slider_change()
 {
   var value = $('#slider').val();
-  ytplayer1.setVolume(100 - value);
-  ytplayer2.setVolume(value - 60);
+  player.setVolume(100 - value);
+  player2.setVolume(0);
+  player3.setVolume(value - 20);
 }
 
