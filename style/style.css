@@ -4,15 +4,21 @@ body {
 	font-family: 'Open Sans', serif;
 	font-size: 20px;
 	color: white;
+	margin: 0px 8em;
 }
 
 body h2 {
 	text-align: center;
-	color: #7E7F9A;
+	color: #a5a7df;
 }
 
 ul {
 	text-align: left;
+}
+
+h3 {
+	margin: 3em 0 0 0;
+	color: #a5a7df;
 }
 
 
@@ -52,19 +58,17 @@ a {
 a {
 	text-decoration: none;
 	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
-	color: #7E7F9A;
 }
 
 a:visited, a:focus {
 	text-decoration: none;
 	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
-	color: #7E7F9A;
 }
 
 a:active, a:hover {
 	text-decoration: none;
 	border-bottom: 2px solid rgba(160, 128, 202, 0.82);
-	color: #7E7F9A;
+	background-color: #B288C0;
 }
 
 .logo {
@@ -73,7 +77,9 @@ a:active, a:hover {
 	padding-left: 206px;
 }
 
-
+img {
+	width: 100%;
+}
 
 .gome img{
 	width: 100%;
@@ -92,7 +98,6 @@ a:active, a:hover {
 }
 
 .content-footer {
-	width: 960px;
 	margin: 0px auto;
 	font-size: 0.6em;
 }
@@ -151,7 +156,7 @@ input#slider {
 }
 
 .content {
-	margin: 0px auto;
+	
 }
 
 /*=========================
